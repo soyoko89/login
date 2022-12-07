@@ -11,6 +11,7 @@
               <el-input v-model="password" type="password"></el-input>
             </el-form-item>
           </el-form>
+          
           <el-button :plain="true" @click="login" type="success">Нэвтрэх</el-button>
         </el-col>
       </el-card>
