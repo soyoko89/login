@@ -1,4 +1,5 @@
 <template>
+<div class="app">
   <body>
     <el-row type="flex" justify="center">
       <el-card shadow="hover">
@@ -17,6 +18,7 @@
       </el-card>
     </el-row>
   </body>
+  </div>
 </template>
 
 
@@ -58,7 +60,7 @@ export default {
 </script>
 <style scoped>
 body {
- width: 100vh;
+ width: 100vw;
  height: 100vh;
  background-image: url("./assets/backgroundImage.jpg");
  background-color: #cccccc;
